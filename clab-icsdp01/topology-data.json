@@ -1,0 +1,255 @@
+{
+  "name": "icsdp01",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-f73d254c376d",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "2001:172:20:20::/64",
+        "ipv6-gw": "2001:172:20:20::1",
+        "mtu": "1500",
+        "external-access": true
+      }
+    }
+  },
+  "nodes": {
+    "CL1": {
+      "index": "0",
+      "shortname": "CL1",
+      "longname": "clab-icsdp01-CL1",
+      "fqdn": "CL1.icsdp01.io",
+      "group": "",
+      "labdir": "/root/xdpimage/clab-icsdp01/CL1",
+      "kind": "linux",
+      "image": "debian:swan2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-f73d254c376d",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/root/xdpimage/clab-icsdp01/CL1",
+        "clab-node-name": "CL1",
+        "clab-node-type": "",
+        "clab-topo-file": "/root/xdpimage/debian11.clab.yml",
+        "containerlab": "icsdp01"
+      }
+    },
+    "LB1": {
+      "index": "1",
+      "shortname": "LB1",
+      "longname": "clab-icsdp01-LB1",
+      "fqdn": "LB1.icsdp01.io",
+      "group": "",
+      "labdir": "/root/xdpimage/clab-icsdp01/LB1",
+      "kind": "linux",
+      "image": "debian:swan2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:20:20::6",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-f73d254c376d",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/root/xdpimage/clab-icsdp01/LB1",
+        "clab-node-name": "LB1",
+        "clab-node-type": "",
+        "clab-topo-file": "/root/xdpimage/debian11.clab.yml",
+        "containerlab": "icsdp01"
+      }
+    },
+    "TEIP1": {
+      "index": "2",
+      "shortname": "TEIP1",
+      "longname": "clab-icsdp01-TEIP1",
+      "fqdn": "TEIP1.icsdp01.io",
+      "group": "",
+      "labdir": "/root/xdpimage/clab-icsdp01/TEIP1",
+      "kind": "linux",
+      "image": "debian:swan2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-f73d254c376d",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/root/xdpimage/clab-icsdp01/TEIP1",
+        "clab-node-name": "TEIP1",
+        "clab-node-type": "",
+        "clab-topo-file": "/root/xdpimage/debian11.clab.yml",
+        "containerlab": "icsdp01"
+      }
+    },
+    "TEIP2": {
+      "index": "3",
+      "shortname": "TEIP2",
+      "longname": "clab-icsdp01-TEIP2",
+      "fqdn": "TEIP2.icsdp01.io",
+      "group": "",
+      "labdir": "/root/xdpimage/clab-icsdp01/TEIP2",
+      "kind": "linux",
+      "image": "debian:swan2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-f73d254c376d",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/root/xdpimage/clab-icsdp01/TEIP2",
+        "clab-node-name": "TEIP2",
+        "clab-node-type": "",
+        "clab-topo-file": "/root/xdpimage/debian11.clab.yml",
+        "containerlab": "icsdp01"
+      }
+    },
+    "TEIP3": {
+      "index": "4",
+      "shortname": "TEIP3",
+      "longname": "clab-icsdp01-TEIP3",
+      "fqdn": "TEIP3.icsdp01.io",
+      "group": "",
+      "labdir": "/root/xdpimage/clab-icsdp01/TEIP3",
+      "kind": "linux",
+      "image": "debian:swan2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.7",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:20:20::7",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-f73d254c376d",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/root/xdpimage/clab-icsdp01/TEIP3",
+        "clab-node-name": "TEIP3",
+        "clab-node-type": "",
+        "clab-topo-file": "/root/xdpimage/debian11.clab.yml",
+        "containerlab": "icsdp01"
+      }
+    },
+    "TEIP4": {
+      "index": "5",
+      "shortname": "TEIP4",
+      "longname": "clab-icsdp01-TEIP4",
+      "fqdn": "TEIP4.icsdp01.io",
+      "group": "",
+      "labdir": "/root/xdpimage/clab-icsdp01/TEIP4",
+      "kind": "linux",
+      "image": "debian:swan2",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-f73d254c376d",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/root/xdpimage/clab-icsdp01/TEIP4",
+        "clab-node-name": "TEIP4",
+        "clab-node-type": "",
+        "clab-topo-file": "/root/xdpimage/debian11.clab.yml",
+        "containerlab": "icsdp01"
+      }
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "CL1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:5d:ae:06",
+        "peer": "z"
+      },
+      "z": {
+        "node": "LB1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:b8:18:d8",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "TEIP1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:a5:e8:77",
+        "peer": "z"
+      },
+      "z": {
+        "node": "LB1",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:7c:5a:a1",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "TEIP2",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:e7:a6:0e",
+        "peer": "z"
+      },
+      "z": {
+        "node": "LB1",
+        "interface": "eth3",
+        "mac": "aa:c1:ab:90:be:9c",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "TEIP3",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:1d:95:f3",
+        "peer": "z"
+      },
+      "z": {
+        "node": "LB1",
+        "interface": "eth4",
+        "mac": "aa:c1:ab:77:c0:de",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "TEIP4",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:03:1d:dc",
+        "peer": "z"
+      },
+      "z": {
+        "node": "LB1",
+        "interface": "eth5",
+        "mac": "aa:c1:ab:42:a2:7e",
+        "peer": "a"
+      }
+    }
+  ]
+}

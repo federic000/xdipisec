@@ -1,0 +1,16 @@
+all:
+  children:
+    linux:
+      hosts:
+        clab-icsdp01-CL1:
+          ansible_host: 172.20.20.3
+        clab-icsdp01-LB1:
+          ansible_host: 172.20.20.6
+        clab-icsdp01-TEIP1:
+          ansible_host: 172.20.20.2
+        clab-icsdp01-TEIP2:
+          ansible_host: 172.20.20.5
+        clab-icsdp01-TEIP3:
+          ansible_host: 172.20.20.7
+        clab-icsdp01-TEIP4:
+          ansible_host: 172.20.20.4
