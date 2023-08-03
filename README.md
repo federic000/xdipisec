@@ -14,7 +14,7 @@ starting from a picture as usual  :
 ![the diagram shows the idea](./pictures/schema.png)
 
 IPSec tunnels are started by the **CL1** node, it is configured to bring up 10 tunnels with a destination IP `192.0.0.2`.
-**LB1** takes incoming traffic from its `eth1` interface where xdp program is attached. LB1 performs some actions (See later user/kernel space sections)
+**LB1** takes incoming traffic from its `eth1` interface where xdp program is attached. **LB1** performs some actions (See later user/kernel space sections)
 to check if the packet is conformant, in that case it tracks the source IP and sends packets out of one of the egress interfaces `[eth2....eth5]` in this example.
 subsequent packets (ICMP, ESP) are sent out to the same interface to keep the session tracked. this is possible
 thanks to the magic of eBPF maps. As a result, these 10 tunnels are fairly distributed across the **TEIP1...4** nodes.
@@ -36,7 +36,7 @@ where configuration scripts are located :
       exec:
         - bash /home/shscripts/startup_cl.sh
 
-at startup, **CL1** executes it's own shell script which provides for interface addressing and strongswan configuation.
+at startup, **CL1** executes it's own shell script which provides for interface addressing and strongswan configuration.
 
 **LB1** is slightly different:
 
@@ -49,7 +49,7 @@ at startup, **CL1** executes it's own shell script which provides for interface 
       - /usr/src/:/usr/src
       - /sys/kernel/:/sys/kernel
 
-There are no startup scripts (**LB1** has no IP configuration to deal with) to compile and run eBPF/XDP code it requires access to standard Linux kernel libraries, headers and modules on the host.
+There are no startup scripts (**LB1** has no IP configuration to deal with), but to compile and run eBPF/XDP code it requires access to standard Linux kernel libraries, headers and modules on the host. Therefore, the *binds* section provides for this.  
 Access to `/sys/kernel/debug/tracing/...` files is not mandatory but necessary for troubleshooting purposes.
 
 The underlying host runs the same Debian 11 "bullseye" distribution. Kernel sources, headers and modules are required.
@@ -110,9 +110,7 @@ Then, based on the incoming packet protocol we startup other actions.
   - If packet is `ESP`, it's assumed IKEv2 on `UDP:500` already kicked in and filled a dedicated `teip_map` entry.
   - anything else is dropped by `XDP_DROP` action.
   - this function is applied to `eth1` only
-3. *int xdp_redirect_egr* is the function that takes care of packets from **TEIP** nodes back to **CL1**. Filtering, map lookups have been done already and there's only one interface
-
-where to send packets. this function is applied to `eth2...eth5`. Does not even rely on the `packetforwarder` function because always sends packet out of `eth1`.
+3. *int xdp_redirect_egr* is the function that takes care of packets from **TEIP** nodes back to **CL1**. Filtering, map lookups have been done already and there's only one interface where to send packets. this function is applied to `eth2...eth5`. Does not even rely on the `packetforwarder` function because always sends packet out of `eth1`.
 
 ## user space code overview : ics_lb_v1.py
 
@@ -129,7 +127,7 @@ these two last modes are of course giving maximum benefits in terms of performan
 6. `unload_xdp.sh` removes `xdpgeneric` program from all interfaces.
 
 
-## spin it up!
+## spin it up
 
 as soon as the `clab deploy` is completed you should see this:
 ```
