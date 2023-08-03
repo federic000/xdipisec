@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /home/
+cd /home/shscripts
 ip link set eth1 address aa:bb:cc:00:00:01
 ip address add 192.0.0.2/24 dev eth1
 ##

@@ -1,6 +1,6 @@
 #!/bin/sh
 # setup client IP addresses and config
-cd /home/
+cd /home/shscripts 
 ip link set eth1 address aa:00:00:00:00:01
 ip address add 192.0.0.1/24 dev eth1
 ip address add 192.0.1.1/24 dev eth1
