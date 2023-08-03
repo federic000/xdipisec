@@ -1,0 +1,39 @@
+# ipsec.conf - strongSwan IPsec configuration file
+# basic configuration
+
+config setup
+        # strictcrlpolicy=yes
+        # uniqueids = no
+        charondebug="ike 2, knl 1, cfg 2"
+
+# Add connections here for each TEIP1...4 - conf pushed by dedicated startup_srv1...4.sh script 
+
+
+conn %default
+    type=tunnel
+    leftikeport=500
+    rightikeport=500
+    mobike = no 
+    keyexchange=ikev2
+    keyingtries=2
+    esp=aes128-sha1-modp1024
+    ike=aes128-sha1-modp1024
+    ikelifetime=8h
+    auto=add
+    authby=secret
+    dpdaction=restart
+    closeaction=restart
+    dpddelay=10s
+    dpdtimeout=30s
+    leftsubnet=0.0.0.0/0
+    #leftupdown=/sbin/ipsec.sh
+    installpolicy=yes
+
+
+conn vpn-concentrator
+      leftid=192.0.0.2
+      left=192.0.0.0/24
+      leftsubnet=10.2.2.0/24
+      right=192.0.0.0/16
+      rightsubnet=10.1.0.0/24
+

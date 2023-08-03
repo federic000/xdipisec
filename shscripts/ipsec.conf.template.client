@@ -1,0 +1,106 @@
+# ipsec.conf - strongSwan IPsec configuration file
+
+# basic configuration
+
+config setup
+        # strictcrlpolicy=yes
+        # uniqueids = no
+        charondebug="ike 2, knl 1, cfg 2"
+
+# Add connections here.
+
+
+conn %default
+    type=tunnel
+    leftikeport=500
+    rightikeport=500
+    mobike = no 
+    keyexchange=ikev2
+    keyingtries=2
+    esp=aes128-sha1-modp1024
+    ike=aes128-sha1-modp1024
+    ikelifetime=8h
+    auto=add
+    authby=secret
+    dpdaction=restart
+    closeaction=restart
+    dpddelay=10s
+    dpdtimeout=30s
+    leftsubnet=0.0.0.0/0
+    #leftupdown=/sbin/ipsec.sh
+    installpolicy=yes
+
+
+conn tun01
+      leftid=192.0.1.1
+      left=192.0.1.1
+      leftsubnet=10.1.0.1/32
+      right=192.0.0.2
+      rightsubnet=10.2.2.2/32
+
+conn tun02
+      leftid=192.0.2.1
+      left=192.0.2.1
+      leftsubnet=10.1.0.2/32
+      right=192.0.0.2
+      rightsubnet=10.2.2.2/32
+
+conn tun03
+      leftid=192.0.3.1
+      left=192.0.3.1
+      leftsubnet=10.1.0.3/32
+      right=192.0.0.2
+      rightsubnet=10.2.2.2/32
+
+conn tun04
+      leftid=192.0.4.1
+      left=192.0.4.1
+      leftsubnet=10.1.0.4/32
+      right=192.0.0.2
+      rightsubnet=10.2.2.2/32
+
+conn tun05
+      leftid=192.0.5.1
+      left=192.0.5.1
+      leftsubnet=10.1.0.5/32
+      right=192.0.0.2
+      rightsubnet=10.2.2.2/32
+
+conn tun06
+      leftid=192.0.6.1
+      left=192.0.6.1
+      leftsubnet=10.1.0.6/32
+      right=192.0.0.2
+      rightsubnet=10.2.2.2/32
+
+conn tun07
+      leftid=192.0.7.1
+      left=192.0.7.1
+      leftsubnet=10.1.0.7/32
+      right=192.0.0.2
+      rightsubnet=10.2.2.2/32
+
+conn tun08
+      leftid=192.0.8.1
+      left=192.0.8.1
+      leftsubnet=10.1.0.8/32
+      right=192.0.0.2
+      rightsubnet=10.2.2.2/32
+
+conn tun09
+      leftid=192.0.9.1
+      left=192.0.9.1
+      leftsubnet=10.1.0.9/32
+      right=192.0.0.2
+      rightsubnet=10.2.2.2/32
+
+conn tun10
+      leftid=192.0.10.1
+      left=192.0.10.1
+      leftsubnet=10.1.0.10/32
+      right=192.0.0.2
+      rightsubnet=10.2.2.2/32
+
+
+
+

@@ -12,6 +12,8 @@ ip address add 192.0.6.1/24 dev eth1
 ip address add 192.0.7.1/24 dev eth1
 ip address add 192.0.8.1/24 dev eth1
 ip address add 192.0.9.1/24 dev eth1
+ip address add 192.0.10.1/24 dev eth1
+
 ##
 ip address add 10.1.0.1/32 dev lo
 ip address add 10.1.0.2/32 dev lo
@@ -22,10 +24,11 @@ ip address add 10.1.0.6/32 dev lo
 ip address add 10.1.0.7/32 dev lo
 ip address add 10.1.0.8/32 dev lo
 ip address add 10.1.0.9/32 dev lo
+ip address add 10.1.0.10/32 dev lo
 
-##
+## push strongswan configuration 
 cat ipsec.conf.template.client > /etc/ipsec.conf
-#
+# start strongswan/charon daemon
 ipsec start
 
 
