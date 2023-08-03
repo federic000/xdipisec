@@ -1,4 +1,4 @@
-// ebpf/xdp code
+// ebpf/xdp kernel space 
 #include <linux/if_ether.h>
 #include <linux/ip.h>
 #include <linux/bpf.h>
@@ -76,8 +76,6 @@ static __always_inline int packetforwarder(struct xdp_md *ctx, __u64 nhoff, __u6
         eth->h_dest[4] = 0x00;
 	eth->h_dest[5] = 0x04;
 	}
-
-
     } 
 
    // update packet counter and send packet out to selected interface index  

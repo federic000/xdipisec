@@ -11,7 +11,7 @@ from ctypes import *
 flags = 0
 
 def usage():
-    print("redirect packets from int1 to int2-3-4... as a round-robin scheduler") 
+    print("redirect packets from int1 to int2..int3....intN using a round-robin scheduler") 
     print("Usage: {0} <ifdev1> <ifdev2.../dev3/dev4/dev5> ".format(sys.argv[0]))
     print("e.g.: {0} eth1 eth2 eth3 eth4 eth5\n".format(sys.argv[0]))
     exit(1)
@@ -70,7 +70,7 @@ while 1:
         time.sleep(1)
     except KeyboardInterrupt:
         print("\n\n") 
-        print("Removing filter from device --> please run ./unload_xdp.sh")
+        print("do not forget to remove xdp from device --> please run ./unload_xdp.sh")
         break 
 
 
